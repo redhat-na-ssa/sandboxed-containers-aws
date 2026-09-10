@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: peer-pod
+  namespace: test
+spec:
+  runtimeClassName: kata-remote
+  containers:
+  - name: sleep
+    image: registry.access.redhat.com/ubi9/ubi:latest
+    command:
+    - sleep
+    - "36000"
+    securityContext:
+      privileged: false
+      seccompProfile:
+        type: RuntimeDefault

@@ -1,0 +1,7 @@
+apiVersion: kataconfiguration.openshift.io/v1
+kind: KataConfig
+metadata:
+  name: cluster-kataconfig
+spec:
+  enablePeerPods: true
+  logLevel: info

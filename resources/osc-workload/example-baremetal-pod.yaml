@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: baremetal-pod
+  namespace: test
+spec:
+  runtimeClassName: kata
+  nodeSelector:
+    node.kubernetes.io/instance-type: m5.metal
+  containers:
+  - name: sleep
+    image: registry.access.redhat.com/ubi9/ubi:latest
+    command:
+    - sleep
+    - "36000"
+    securityContext:
+      privileged: false
+      seccompProfile:
+        type: RuntimeDefault
