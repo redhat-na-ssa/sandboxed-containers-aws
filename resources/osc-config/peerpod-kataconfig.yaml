@@ -5,3 +5,6 @@ metadata:
 spec:
   enablePeerPods: true
   logLevel: info
+  kataConfigPoolSelector:
+    matchLabels:
+      kata-enabled: true
